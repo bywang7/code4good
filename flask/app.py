@@ -29,5 +29,5 @@ def handleMessage(msg):
 
 
 if __name__ == "__main__":
-    app.run()
-    #socketio.run(app)
+    #app.run()
+    socketio.run(app) #needed for chat
