@@ -16,7 +16,11 @@ def my_form_post():
     user_id = request.form['search']
     print(user_id)
     user = User.query.filter_by(name=user_id).first()
-    return user.name
+    print(user)
+    if user == None:
+        return render_template('index.html', user_name = "Invalid username")
+    else:
+        return render_template('index.html', user_name = "User found: " + user.name)
 
 @main.route('/profile')
 def profile():

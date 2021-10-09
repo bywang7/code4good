@@ -1,9 +1,12 @@
 <div class="topnav">
-  <a class="active" href="#home">User</a>
-  <a href="#about">Search</a>
+  <a href="#about">Alumni Search</a>
   <form method="POST">
     <input type="text" placeholder="Search.." name = "search">
   </form>
+  <h3 class="title" align = left vertical-align: text-top>
+    {{user_name}}
+  </h3>
+  
 </div>
 
 <style>
@@ -40,6 +43,7 @@
   font-size: 17px;
 }
 
+.topnav 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
   .topnav a, .topnav input[type=text] {
@@ -67,7 +71,6 @@
 <h2 class="subtitle">
   Alumni Networking Platofrm
 </h2>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 <a href="https://twitter.com/lagreencorps?lang=en"><i class="fa fa-twitter"></i></a>
