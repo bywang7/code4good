@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from flask_login import login_required, current_user
 from . import db
+from .models import User
 # from flask_socketio import SocketIO
 
 # socketio = SocketIO('main', cors_allowed_origins='*')
@@ -9,6 +10,13 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def index():
     return render_template('index.html')
+
+@main.route('/', methods=['POST'])
+def my_form_post():
+    user_id = request.form['search']
+    print(user_id)
+    user = User.query.filter_by(name=user_id).first()
+    return user.name
 
 @main.route('/profile')
 def profile():
